@@ -1,0 +1,11 @@
+version: "3"
+services:
+  kafka:
+    image: "bitnami/kafka:3.2.3"
+    hostname: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_ENABLE_KRAFT=yes
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
